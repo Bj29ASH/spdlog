@@ -9,7 +9,7 @@ add_library(spdlog INTERFACE)
 target_include_directories(spdlog
   INTERFACE
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-  $<INSTALL_INTERFACE:include/spdlog>
+  $<INSTALL_INTERFACE:include>
 )
 
 include(CMakePackageConfigHelpers)
@@ -26,7 +26,7 @@ install(TARGETS spdlog
   RUNTIME DESTINATION bin
 )
 
-install(DIRECTORY ${CMAKE_SOURCE_DIR}/include/spdlog DESTINATION include/spdlog)
+install(DIRECTORY ${CMAKE_SOURCE_DIR}/include/spdlog DESTINATION include)
 
 install(
   EXPORT spdlogTargets
